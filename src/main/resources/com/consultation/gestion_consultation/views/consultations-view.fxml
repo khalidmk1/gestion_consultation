@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.consultation.gestion_consultation.controllers.ConsultationController">
+   <top>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="187.0" prefWidth="600.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="47.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="75.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="86.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Date de Consultation :">
+                     <GridPane.margin>
+                        <Insets left="22.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Patient" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="22.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Description" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="22.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <DatePicker fx:id="DatePickerConsultation" prefHeight="26.0" prefWidth="289.0" GridPane.columnIndex="1" />
+                  <ChoiceBox fx:id="ChoiseBoxPatient" prefHeight="26.0" prefWidth="289.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextArea fx:id="TextEreaDescription" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <HBox prefHeight="91.0" prefWidth="600.0" spacing="22.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Ajouter" onAction="#addConsultation"/>
+                  <Button mnemonicParsing="false" text="Suprimer" onAction="#supprimerConsultation" />
+               </children>
+               <padding>
+                  <Insets left="20.0" top="12.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="TableConsultation" prefHeight="208.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="ColumnId" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="ColumnConsultation" prefWidth="191.0" text="DATE DE CONSULTATION" />
+            <TableColumn fx:id="ColumnPatient" prefWidth="99.0" text="PATIENT" />
+            <TableColumn fx:id="ClumnDescription" prefWidth="234.0" text="DESCRIPTION" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
